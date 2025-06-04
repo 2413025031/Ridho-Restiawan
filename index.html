@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WEBSITE RIDHO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Tambahan animasi untuk transisi antar section */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profil-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent-cyber);
+  transition: 0.3s ease;
+}
+
+header h1 {
+  text-shadow: 0 0 5px #fff, 0 0 10px var(--accent-cyber), 0 0 20px var(--accent-cyber);
+}
+
+/* Hover link tugas */
+.link-tugas:hover {
+  color: var(--accent-cyber);
+  text-decoration: underline;
+}
+
+/* Tombol menu aktif */
+nav button.active {
+  border-bottom: 2px solid var(--primary-cyber);
+  color: var(--primary-cyber);
+}
+
+    :root {
+      --bg-light: #f0f4f8;
+      --text-light: #333;
+      --bg-dark: #0f0f1a;
+      --text-dark: #f0f0f0;
+      --primary-cyber: #ff00ff;
+      --secondary-cyber: #00ffff;
+      --accent-cyber: #ff0080;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--primary-cyber), var(--accent-cyber));
+      color: black;
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    nav {
+      background-color: #1a1a2e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+    }
+
+    nav .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: var(--secondary-cyber);
+      font-size: 16px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 10px 20px;
+      transition: 0.3s;
+      text-shadow: 0 0 5px var(--secondary-cyber);
+    }
+
+    nav button:hover {
+      color: var(--primary-cyber);
+      text-shadow: 0 0 8px var(--primary-cyber), 0 0 12px var(--primary-cyber);
+    }
+
+    .toggle {
+      background-color: var(--accent-cyber);
+      border: none;
+      padding: 8px 16px;
+      color: black;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .toggle:hover {
+      background-color: var(--secondary-cyber);
+    }
+
+    section {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
+      display: none;
+      transition: 0.5s;
+    }
+
+    body.dark section {
+      background: rgba(20, 20, 40, 0.95);
+      box-shadow: 0 0 15px var(--primary-cyber);
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      color: var(--accent-cyber);
+      border-bottom: 2px solid #888;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .sosial a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: var(--secondary-cyber);
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    table, th, td {
+      border: 1px solid #888;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #222;
+      color: var(--primary-cyber);
+    }
+
+    .status-selesai {
+      color: #00ff99;
+      font-weight: bold;
+    }
+
+    .status-belum {
+      color: #ff4444;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: var(--secondary-cyber);
+      margin-top: 40px;
+    }
+
+    .profil-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profil-container img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--accent-cyber);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>RIDHO RESTIAWAN</h1>
+    <p>Selamat datang di website RIDHO RESTIAWAN</p>
+  </header>
+
+  <nav>
+    <div class="menu">
+      <button onclick="tampilkan('datadiri')">Data Pribadi</button>
+      <button onclick="tampilkan('pendidikan')">Pendidikan</button>
+      <button onclick="tampilkan('sosial')">Media Sosial</button>
+      <button onclick="tampilkan('tugas')">Tugas</button>
+    </div>
+    <button class="toggle" onclick="toggleMode()">🌓 Mode</button>
+  </nav>
+
+  <section id="datadiri" class="active">
+    <h2>Data Pribadi</h2>
+    <div class="profil-container">
+      <img src="ppridhoweb2.jpeg" alt="Foto Profil">
+      <div>
+        <p><strong>Nama:</strong> Ridho Restiawan</p>
+        <p><strong>Tempat, Tanggal Lahir:</strong> Lampung, 05 November 2005</p>
+        <p><strong>Alamat:</strong> Gg. Kutilang No. 5, Lampung</p>
+        <p><strong>Email:</strong> ridhorestiawan05@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pendidikan">
+    <h2>Jenjang Pendidikan</h2>
+    <ul>
+      <li>TK Pembina (2010 - 2011)</li>
+      <li>SD Negeri 1 Gunung Sugih (2011 - 2017)</li>
+      <li>SMP Negeri 1 Gunung Sugih (2017 - 2020)</li>
+      <li>SMKS AMAL BAKTI (2020 - 2023)</li>
+    </ul>
+  </section>
+
+  <section id="sosial">
+    <h2>Media Sosial</h2>
+    <div class="sosial">
+      <a href="https://www.instagram.com/ridhorstwn?igsh=eHB4MmhsZ3BpdjRx&utm_source=qr" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/Ridho.restiawan23?locale=id_ID" target="_blank">Facebook</a>
+      <a href="https://github.com/2413025031" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <section id="tugas">
+    <h2>Daftar Tugas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nama Tugas</th>
+          <th>Deadline</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+  <tr>
+    <td><a href="https://drive.google.com/drive/folders/1TKLNXE_6YlThcmSCq1r7Ih0F4V0T_vaU?usp=sharing" onclick="bukaDetail('tokoh sejarah')" class="link-tugas">Tokoh Sejarah</a></td>
+    <td>10 Juni 2025</td>
+    <td class="status-selesai">Selesai</td>
+  </tr>
+  <tr>
+    <td><a href="https://drive.google.com/drive/folders/1ThuSHj1NdWaExK3b1BuPKatk0IjynY9K?usp=drive_link" onclick="bukaDetail('GarisDDA')" class="link-tugas">Garis DDA</a></td>
+    <td>10 Juni 2025</td>
+    <td class="status-selesai">Selesai</td>
+  </tr>
+  <tr>
+    <td><a href="https://drive.google.com/drive/folders/1ClqLgUdQBepuJdYEdcNB7Du7Qb3IRtOB?usp=drive_link" onclick="bukaDetail('Lingkaran')" class="link-tugas">Lingkaran</a></td>
+    <td>10 Juni 2025</td>
+    <td class="status-selesai">Selesai</td>
+  </tr>
+    <tr>
+    <td><a href="https://drive.google.com/drive/folders/1jabJtz8wKtU11R_R04BMl7E-lUyZf_qe?usp=drive_link" onclick="bukaDetail('Kurva')" class="link-tugas">Kurva</a></td>
+    <td>10 Juni 2025</td>
+    <td class="status-selesai">Selesai</td>
+  </tr>
+  </tr>
+    <tr>
+    <td><a href="https://drive.google.com/file/d/1FHd6MhGEsOTX3t9nRaixJnFi7-hxfxoo/view?usp=sharing" onclick="bukaDetail('kuis 1')" class="link-tugas">Kuis 1 Persamaan Kuadrat</a></td>
+    <td>10 Juni 2025</td>
+    <td class="status-selesai">Selesai</td>
+  </tr>
+    </tr>
+    <tr>
+    <td><a href="ttps://drive.google.com/file/d/1BcHl0HVovrViEOQjHyuf-b94lQ8Z_CyZ/view?usp=sharing" onclick="bukaDetail('Kuis 2')" class="link-tugas">Kuis 2 Transformasi 2D</a></td>
+    <td>10 Juni 2025</td>
+    <td class="status-selesai">Selesai</td>
+  </tr>
+  </tr>
+    <tr>
+    <td><a href="https://drive.google.com/file/d/1E-8wE_MMoBgd3IYJZ3jRsxiOFofbdaN0/view?usp=sharing" onclick="bukaDetail('kuis 3')" class="link-tugas">Kuis 3 Line Clipping</a></td>
+    <td>10 Juni 2025</td>
+    <td class="status-selesai">Selesai</td>
+  </tr>
+</tbody>
+    </table>
+  </section>
+
+  <footer>
+    &copy; 2025 RIDHO RESTIAWAN • Semua Hak Dilindungi
+  </footer>
+
+  <script>
+    function tampilkan(id) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>
